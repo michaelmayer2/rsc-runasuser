@@ -12,7 +12,8 @@ echo "dn: cn=rsc_group`printf %02i $1`,dc=example,dc=org"
 cat << EOF 
 changetype: modify
 add: memberuid
-memberuid: test
+memberuid: test1
+memberuid: test2
 EOF
 echo -e "\n\n"
 
