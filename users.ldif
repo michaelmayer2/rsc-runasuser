@@ -47,7 +47,7 @@ objectclass: top
 # Entry 5: cn=rstudio-connect,dc=example,dc=org
 dn: cn=rstudio-connect,dc=example,dc=org
 cn: rstudio-connect
-gidnumber: 999
+gidnumber: 500
 objectclass: posixGroup
 objectclass: top
 
@@ -72,7 +72,7 @@ objectclass: top
 # Entry 8: cn=joe,dc=engineering,dc=example,dc=org
 dn: cn=joe,dc=engineering,dc=example,dc=org
 cn: joe
-gidnumber: 999
+gidnumber: 500
 givenname: Joe
 homedirectory: /home/joe
 loginshell: /bin/sh
@@ -88,7 +88,7 @@ userpassword: {MD5}j/MkifkvM0FmlL6P3C1MIg==
 # Entry 9: cn=julie,dc=engineering,dc=example,dc=org
 dn: cn=julie,dc=engineering,dc=example,dc=org
 cn: julie
-gidnumber: 999
+gidnumber: 500
 givenname: Julie
 homedirectory: /home/julie
 loginshell: /bin/sh
@@ -113,7 +113,7 @@ objectclass: top
 # Entry 11: cn=ashley,dc=finance,dc=example,dc=org
 dn: cn=ashley,dc=finance,dc=example,dc=org
 cn: ashley
-gidnumber: 999
+gidnumber: 500
 givenname: Ashley
 homedirectory: /home/ashley
 loginshell: /bin/sh
@@ -129,7 +129,7 @@ userpassword: {MD5}rf9ExRAvyiefznVZq/Zv7g==
 # Entry 12: cn=bobo,dc=finance,dc=example,dc=org
 dn: cn=bobo,dc=finance,dc=example,dc=org
 cn: bobo
-gidnumber: 999
+gidnumber: 500
 givenname: Bobo
 homedirectory: /home/bobo
 loginshell: /bin/sh
@@ -145,7 +145,7 @@ userpassword: {MD5}BsVqiZSdYX3vUvNxw1e22w==
 # Entry 13: cn=john,dc=finance,dc=example,dc=org
 dn: cn=john,dc=finance,dc=example,dc=org
 cn: john
-gidnumber: 999
+gidnumber: 500
 givenname: John
 homedirectory: /home/john
 loginshell: /bin/sh
@@ -170,7 +170,7 @@ objectclass: top
 # Entry 15: cn=jen,dc=support,dc=example,dc=org
 dn: cn=jen,dc=support,dc=example,dc=org
 cn: jen
-gidnumber: 999
+gidnumber: 500
 givenname: Jen
 homedirectory: /home/jen
 loginshell: /bin/sh
@@ -186,7 +186,7 @@ userpassword: {MD5}sY6kRVC2jQ0BK9kBfEqGSg==
 # Entry 16: cn=test1,dc=support,dc=example,dc=org
 dn: cn=test1,dc=support,dc=example,dc=org
 cn: test1
-gidnumber: 999
+gidnumber: 500
 givenname: Test1
 homedirectory: /home/test1
 loginshell: /bin/sh
@@ -197,29 +197,29 @@ objectclass: top
 sn: Tester
 uid: test1
 uidnumber: 1005
-userpassword: {MD5}CY9rzUYh03PK3k6DJie09g==
+userpassword: {MD5}WhBei51A4TKXgNYuoiZdig== 
 
 # Entry 16: cn=test2,dc=support,dc=example,dc=org
 dn: cn=test2,dc=support,dc=example,dc=org
 cn: test2
-gidnumber: 999
+gidnumber: 500
 givenname: Test2
 homedirectory: /home/test2
 loginshell: /bin/sh
-mail: test1@example.org
+mail: test2@example.org
 objectclass: inetOrgPerson
 objectclass: posixAccount
 objectclass: top
 sn: Tester
 uid: test2
 uidnumber: 1007
-userpassword: {MD5}CY9rzUYh03PK3k6DJie09g==
+userpassword: {MD5}WhBei51A4TKXgNYuoiZdig== 
 
 
 # Entry 16: cn=bingo,dc=support,dc=example,dc=org
 dn: cn=bingo,dc=support,dc=example,dc=org
 cn: bingo
-gidnumber: 999
+gidnumber: 500
 givenname: Bingo
 homedirectory: /home/bingo
 loginshell: /bin/sh
@@ -231,6 +231,23 @@ sn: Nameo
 uid: bingo
 uidnumber: 1008
 userpassword: {MD5}OjeVu2HVN3VFtPNF/yI+PQ==
+
+# Entry 16: cn=bingo,dc=support,dc=example,dc=org
+dn: cn=rstudio-connect,dc=support,dc=example,dc=org
+cn: rstudio-connect
+gidnumber: 500
+givenname: RStudio
+homedirectory: /home/rstudio-connect
+loginshell: /bin/sh
+mail: rsconnect@example.org
+objectclass: inetOrgPerson
+objectclass: posixAccount
+objectclass: top
+sn: Connect
+uid: rstudio-connect
+uidnumber: 999
+userpassword: {MD5}OjeVu2HVN3VFtPNF/yI+PQ==
+
 
 # groupOfNames
 dn: cn=Example Group,dc=example,dc=org

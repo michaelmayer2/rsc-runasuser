@@ -1,4 +1,4 @@
-i#!/bin/bash
+#!/bin/bash
 
 set -e
 set -x
@@ -9,6 +9,13 @@ deactivate() {
     /opt/rstudio-connect/bin/license-manager deactivate >/dev/null 2>&1
 }
 trap deactivate EXIT
+
+userdel rstudio-connect 
+
+apt-get update -y && apt install -y openssh-server sssd-ldap ldap-utils vim
+/etc/init.d/sssd start
+/etc/init.d/ssh start
+pam-auth-update --enable mkhomedir
 
 # Activate License
 RSC_LICENSE_FILE_PATH=${RSC_LICENSE_FILE_PATH:-/etc/rstudio-connect/license.lic}
@@ -23,11 +30,6 @@ fi
 # ensure these cannot be inherited by child processes
 unset RSC_LICENSE
 unset RSC_LICENSE_SERVER
-
-apt-get update -y && apt install -y openssh-server sssd-ldap ldap-utils vim
-/etc/init.d/sssd start
-/etc/init.d/ssh start
-pam-auth-update --enable mkhomedir
 
 # Start RStudio Connect
 /opt/rstudio-connect/bin/connect --config /etc/rstudio-connect/rstudio-connect.gcfg

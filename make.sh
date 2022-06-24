@@ -29,7 +29,6 @@ export RSC_LICENSE=3ICD-YGR2-4I28-SCMD-6KVI-EU5R-XETA
 
 rm -rf /efs/rsc
 
-
 docker run -it --privileged \
     -p 3939:3939 \
     -v /efs/rsc:/data \
