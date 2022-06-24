@@ -1,0 +1,539 @@
+# extended LDIF
+#
+# LDAPv3
+# base <dc=example,dc=org> with scope subtree
+# filter: (objectclass=*)
+# requesting: ALL
+#
+
+## example.org
+#dn: dc=example,dc=org
+#objectClass: top
+#objectClass: dcObject
+#objectClass: organization
+#o: Example Inc.
+#dc: example
+
+# engineering_group, example.org
+dn: cn=engineering_group,dc=example,dc=org
+cn: engineering_group
+gidNumber: 501
+memberUid: joe
+memberUid: julie
+objectClass: posixGroup
+objectClass: top
+
+# finance_group, example.org
+dn: cn=finance_group,dc=example,dc=org
+cn: finance_group
+gidNumber: 502
+memberUid: bobo
+memberUid: john
+memberUid: ashley
+objectClass: posixGroup
+objectClass: top
+
+# rstudio-connect, example.org
+dn: cn=rstudio-connect,dc=example,dc=org
+cn: rstudio-connect
+gidNumber: 500
+objectClass: posixGroup
+objectClass: top
+
+# support_group, example.org
+dn: cn=support_group,dc=example,dc=org
+cn: support_group
+gidNumber: 503
+memberUid: jen
+memberUid: test
+objectClass: posixGroup
+objectClass: top
+
+# engineering.example.org
+dn: dc=engineering,dc=example,dc=org
+dc: engineering
+description: The Engineering Department
+o: Engineering
+objectClass: dcObject
+objectClass: organization
+objectClass: top
+
+# joe, engineering.example.org
+dn: cn=joe,dc=engineering,dc=example,dc=org
+cn: joe
+gidNumber: 500
+givenName: Joe
+homeDirectory: /home/joe
+loginShell: /bin/sh
+mail: joe@example.org
+objectClass: inetOrgPerson
+objectClass: posixAccount
+objectClass: top
+sn: Golly
+uid: joe
+uidNumber: 1000
+userPassword:: e01ENX1qL01raWZrdk0wRm1sTDZQM0MxTUlnPT0=
+
+# julie, engineering.example.org
+dn: cn=julie,dc=engineering,dc=example,dc=org
+cn: julie
+gidNumber: 500
+givenName: Julie
+homeDirectory: /home/julie
+loginShell: /bin/sh
+mail: julie@example.org
+objectClass: inetOrgPerson
+objectClass: posixAccount
+objectClass: top
+sn: Jolly
+uid: julie
+uidNumber: 1001
+userPassword:: e01ENX1GdkV2WG9ONTRpdnBsZVVGNi93YmhBPT0=
+
+# finance.example.org
+dn: dc=finance,dc=example,dc=org
+dc: finance
+description: The Finance Department
+o: Finance
+objectClass: dcObject
+objectClass: organization
+objectClass: top
+
+# ashley, finance.example.org
+dn: cn=ashley,dc=finance,dc=example,dc=org
+cn: ashley
+gidNumber: 500
+givenName: Ashley
+homeDirectory: /home/ashley
+loginShell: /bin/sh
+mail: ashley@example.com
+objectClass: inetOrgPerson
+objectClass: posixAccount
+objectClass: top
+sn: Awesome
+uid: ashley
+uidNumber: 1006
+userPassword:: e01ENX1yZjlFeFJBdnlpZWZ6blZacS9adjdnPT0=
+
+# bobo, finance.example.org
+dn: cn=bobo,dc=finance,dc=example,dc=org
+cn: bobo
+gidNumber: 500
+givenName: Bobo
+homeDirectory: /home/bobo
+loginShell: /bin/sh
+mail: bobo@example.org
+objectClass: inetOrgPerson
+objectClass: posixAccount
+objectClass: top
+sn: Momo
+uid: bobo
+uidNumber: 1002
+userPassword:: e01ENX1Cc1ZxaVpTZFlYM3ZVdk54dzFlMjJ3PT0=
+
+# john, finance.example.org
+dn: cn=john,dc=finance,dc=example,dc=org
+cn: john
+gidNumber: 500
+givenName: John
+homeDirectory: /home/john
+loginShell: /bin/sh
+mail: john@example.org
+objectClass: inetOrgPerson
+objectClass: posixAccount
+objectClass: top
+sn: Doe
+uid: john
+uidNumber: 1003
+userPassword:: e01ENX1VbnZWdGRhSjRzTXE2WFRHSXAvM2hRPT0=
+
+# support.example.org
+dn: dc=support,dc=example,dc=org
+dc: support
+description: The Support Department
+o: Support
+objectClass: dcObject
+objectClass: organization
+objectClass: top
+
+# jen, support.example.org
+dn: cn=jen,dc=support,dc=example,dc=org
+cn: jen
+gidNumber: 500
+givenName: Jen
+homeDirectory: /home/jen
+loginShell: /bin/sh
+mail: jen@example.org
+objectClass: inetOrgPerson
+objectClass: posixAccount
+objectClass: top
+sn: Juniper
+uid: jen
+uidNumber: 1004
+userPassword:: e01ENX1zWTZrUlZDMmpRMEJLOWtCZkVxR1NnPT0=
+
+# test1, support.example.org
+dn: cn=test1,dc=support,dc=example,dc=org
+cn: test1
+gidNumber: 500
+givenName: Test1
+homeDirectory: /home/test1
+loginShell: /bin/sh
+mail: test1@example.org
+objectClass: inetOrgPerson
+objectClass: posixAccount
+objectClass: top
+sn: Tester
+uid: test1
+uidNumber: 1005
+userPassword:: e01ENX1XaEJlaTUxQTRUS1hnTll1b2laZGlnPT0g
+
+# test2, support.example.org
+dn: cn=test2,dc=support,dc=example,dc=org
+cn: test2
+gidNumber: 500
+givenName: Test2
+homeDirectory: /home/test2
+loginShell: /bin/sh
+mail: test2@example.org
+objectClass: inetOrgPerson
+objectClass: posixAccount
+objectClass: top
+sn: Tester
+uid: test2
+uidNumber: 1007
+userPassword:: e01ENX1XaEJlaTUxQTRUS1hnTll1b2laZGlnPT0g
+
+# bingo, support.example.org
+dn: cn=bingo,dc=support,dc=example,dc=org
+cn: bingo
+gidNumber: 500
+givenName: Bingo
+homeDirectory: /home/bingo
+loginShell: /bin/sh
+mail: bingo@example.org
+objectClass: inetOrgPerson
+objectClass: posixAccount
+objectClass: top
+sn: Nameo
+uid: bingo
+uidNumber: 1008
+userPassword:: e01ENX1PamVWdTJIVk4zVkZ0UE5GL3lJK1BRPT0=
+
+# rstudio-connect, support.example.org
+dn: cn=rstudio-connect,dc=support,dc=example,dc=org
+cn: rstudio-connect
+gidNumber: 500
+givenName: RStudio
+homeDirectory: /home/rstudio-connect
+loginShell: /bin/sh
+mail: rsconnect@example.org
+objectClass: inetOrgPerson
+objectClass: posixAccount
+objectClass: top
+sn: Connect
+uid: rstudio-connect
+uidNumber: 999
+userPassword:: e01ENX1PamVWdTJIVk4zVkZ0UE5GL3lJK1BRPT0=
+
+# Example Group, example.org
+dn: cn=Example Group,dc=example,dc=org
+cn: Example Group
+member: cn=bingo,dc=support,dc=example,dc=org
+member: cn=test,dc=support,dc=example,dc=org
+objectClass: groupOfNames
+
+# rsc_group01, example.org
+dn: cn=rsc_group01,dc=example,dc=org
+gidNumber: 601
+objectClass: posixGroup
+objectClass: top
+cn: rsc_group01
+memberUid: test1
+memberUid: test2
+
+# rsc_group02, example.org
+dn: cn=rsc_group02,dc=example,dc=org
+gidNumber: 602
+objectClass: posixGroup
+objectClass: top
+cn: rsc_group02
+memberUid: test1
+memberUid: test2
+
+# rsc_group03, example.org
+dn: cn=rsc_group03,dc=example,dc=org
+gidNumber: 603
+objectClass: posixGroup
+objectClass: top
+cn: rsc_group03
+memberUid: test1
+memberUid: test2
+
+# rsc_group04, example.org
+dn: cn=rsc_group04,dc=example,dc=org
+gidNumber: 604
+objectClass: posixGroup
+objectClass: top
+cn: rsc_group04
+memberUid: test1
+memberUid: test2
+
+# rsc_group05, example.org
+dn: cn=rsc_group05,dc=example,dc=org
+gidNumber: 605
+objectClass: posixGroup
+objectClass: top
+cn: rsc_group05
+memberUid: test1
+memberUid: test2
+
+# rsc_group06, example.org
+dn: cn=rsc_group06,dc=example,dc=org
+gidNumber: 606
+objectClass: posixGroup
+objectClass: top
+cn: rsc_group06
+memberUid: test1
+memberUid: test2
+
+# rsc_group07, example.org
+dn: cn=rsc_group07,dc=example,dc=org
+gidNumber: 607
+objectClass: posixGroup
+objectClass: top
+cn: rsc_group07
+memberUid: test1
+memberUid: test2
+
+# rsc_group08, example.org
+dn: cn=rsc_group08,dc=example,dc=org
+gidNumber: 608
+objectClass: posixGroup
+objectClass: top
+cn: rsc_group08
+memberUid: test1
+memberUid: test2
+
+# rsc_group09, example.org
+dn: cn=rsc_group09,dc=example,dc=org
+gidNumber: 609
+objectClass: posixGroup
+objectClass: top
+cn: rsc_group09
+memberUid: test1
+memberUid: test2
+
+# rsc_group10, example.org
+dn: cn=rsc_group10,dc=example,dc=org
+gidNumber: 610
+objectClass: posixGroup
+objectClass: top
+cn: rsc_group10
+memberUid: test1
+memberUid: test2
+
+# rsc_group11, example.org
+dn: cn=rsc_group11,dc=example,dc=org
+gidNumber: 611
+objectClass: posixGroup
+objectClass: top
+cn: rsc_group11
+memberUid: test1
+memberUid: test2
+
+# rsc_group12, example.org
+dn: cn=rsc_group12,dc=example,dc=org
+gidNumber: 612
+objectClass: posixGroup
+objectClass: top
+cn: rsc_group12
+memberUid: test1
+memberUid: test2
+
+# rsc_group13, example.org
+dn: cn=rsc_group13,dc=example,dc=org
+gidNumber: 613
+objectClass: posixGroup
+objectClass: top
+cn: rsc_group13
+memberUid: test1
+memberUid: test2
+
+# rsc_group14, example.org
+dn: cn=rsc_group14,dc=example,dc=org
+gidNumber: 614
+objectClass: posixGroup
+objectClass: top
+cn: rsc_group14
+memberUid: test1
+memberUid: test2
+
+# rsc_group15, example.org
+dn: cn=rsc_group15,dc=example,dc=org
+gidNumber: 615
+objectClass: posixGroup
+objectClass: top
+cn: rsc_group15
+memberUid: test1
+memberUid: test2
+
+# rsc_group16, example.org
+dn: cn=rsc_group16,dc=example,dc=org
+gidNumber: 616
+objectClass: posixGroup
+objectClass: top
+cn: rsc_group16
+memberUid: test1
+memberUid: test2
+
+# rsc_group17, example.org
+dn: cn=rsc_group17,dc=example,dc=org
+gidNumber: 617
+objectClass: posixGroup
+objectClass: top
+cn: rsc_group17
+memberUid: test1
+memberUid: test2
+
+# rsc_group18, example.org
+dn: cn=rsc_group18,dc=example,dc=org
+gidNumber: 618
+objectClass: posixGroup
+objectClass: top
+cn: rsc_group18
+memberUid: test1
+memberUid: test2
+
+# rsc_group19, example.org
+dn: cn=rsc_group19,dc=example,dc=org
+gidNumber: 619
+objectClass: posixGroup
+objectClass: top
+cn: rsc_group19
+memberUid: test1
+memberUid: test2
+
+# rsc_group20, example.org
+dn: cn=rsc_group20,dc=example,dc=org
+gidNumber: 620
+objectClass: posixGroup
+objectClass: top
+cn: rsc_group20
+memberUid: test1
+memberUid: test2
+
+# rsc_group21, example.org
+dn: cn=rsc_group21,dc=example,dc=org
+gidNumber: 621
+objectClass: posixGroup
+objectClass: top
+cn: rsc_group21
+memberUid: test1
+memberUid: test2
+
+# rsc_group22, example.org
+dn: cn=rsc_group22,dc=example,dc=org
+gidNumber: 622
+objectClass: posixGroup
+objectClass: top
+cn: rsc_group22
+memberUid: test1
+memberUid: test2
+
+# rsc_group23, example.org
+dn: cn=rsc_group23,dc=example,dc=org
+gidNumber: 623
+objectClass: posixGroup
+objectClass: top
+cn: rsc_group23
+memberUid: test1
+memberUid: test2
+
+# rsc_group24, example.org
+dn: cn=rsc_group24,dc=example,dc=org
+gidNumber: 624
+objectClass: posixGroup
+objectClass: top
+cn: rsc_group24
+memberUid: test1
+memberUid: test2
+
+# rsc_group25, example.org
+dn: cn=rsc_group25,dc=example,dc=org
+gidNumber: 625
+objectClass: posixGroup
+objectClass: top
+cn: rsc_group25
+memberUid: test1
+memberUid: test2
+
+# rsc_group26, example.org
+dn: cn=rsc_group26,dc=example,dc=org
+gidNumber: 626
+objectClass: posixGroup
+objectClass: top
+cn: rsc_group26
+memberUid: test1
+memberUid: test2
+
+# rsc_group27, example.org
+dn: cn=rsc_group27,dc=example,dc=org
+gidNumber: 627
+objectClass: posixGroup
+objectClass: top
+cn: rsc_group27
+memberUid: test1
+memberUid: test2
+
+# rsc_group28, example.org
+dn: cn=rsc_group28,dc=example,dc=org
+gidNumber: 628
+objectClass: posixGroup
+objectClass: top
+cn: rsc_group28
+memberUid: test1
+memberUid: test2
+
+# rsc_group29, example.org
+dn: cn=rsc_group29,dc=example,dc=org
+gidNumber: 629
+objectClass: posixGroup
+objectClass: top
+cn: rsc_group29
+memberUid: test1
+memberUid: test2
+
+# rsc_group30, example.org
+dn: cn=rsc_group30,dc=example,dc=org
+gidNumber: 630
+objectClass: posixGroup
+objectClass: top
+cn: rsc_group30
+memberUid: test1
+memberUid: test2
+
+# rsc_group31, example.org
+dn: cn=rsc_group31,dc=example,dc=org
+gidNumber: 631
+objectClass: posixGroup
+objectClass: top
+cn: rsc_group31
+memberUid: test1
+memberUid: test2
+
+# rsc_group32, example.org
+dn: cn=rsc_group32,dc=example,dc=org
+gidNumber: 632
+objectClass: posixGroup
+objectClass: top
+cn: rsc_group32
+memberUid: test1
+memberUid: test2
+
+# search result
+search: 2
+result: 0 Success
+
+# numResponses: 52
+# numEntries: 51

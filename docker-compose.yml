@@ -1,0 +1,53 @@
+version: "2.2"
+
+services:
+  openldap:
+    image: osixia/openldap:latest 
+    hostname: openldap
+    privileged: true 
+    ports:
+            - "389:389"
+            - "636:636"
+    environment:
+            LDAP_ADMIN_PASSWORD: "secret"
+            LDAP_TLS : "false"
+    volumes: 
+            - $PWD/ldif/bootstrap.ldif:/container/service/slapd/assets/config/bootstrap/ldif/50-bootstrap.ldif
+    command: --copy-service
+
+
+  rsc-efs:
+    image: rstudio/rstudio-connect:latest
+    hostname: rsc-efs
+    privileged: true
+    depends_on:
+      - openldap
+    ports:
+            - "3939:3939"
+    environment:
+            RSC_LICENSE: ${RSC_LICENSE}
+    volumes:
+            - /scratch/rsc:/data
+            - $PWD/etc/sssd/sssd.conf:/etc/sssd/sssd.conf 
+            - $PWD/etc/pam.d/rstudio-connect:/etc/pam.d/rstudio-connect 
+            - $PWD/etc/rstudio-connect/rstudio-connect.gcfg:/etc/rstudio-connect/rstudio-connect.gcfg 
+            - $PWD/usr/local/bin/startup.sh:/usr/local/bin/startup.sh
+
+
+  rsc-fsx:
+    image: rstudio/rstudio-connect:latest
+    hostname: rsc-efs
+    privileged: true
+    depends_on:
+      - openldap
+    ports:
+            - "3940:3939"
+    environment:
+            RSC_LICENSE: ${RSC_LICENSE}
+    volumes:
+            - /scratch/rsc:/data
+            - $PWD/etc/sssd/sssd.conf:/etc/sssd/sssd.conf
+            - $PWD/etc/pam.d/rstudio-connect:/etc/pam.d/rstudio-connect
+            - $PWD/etc/rstudio-connect/rstudio-connect.gcfg:/etc/rstudio-connect/rstudio-connect.gcfg
+            - $PWD/usr/local/bin/startup.sh:/usr/local/bin/startup.sh
+ 
