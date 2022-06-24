@@ -12,6 +12,8 @@ Once `docker-compose` has run, there is two RSC instances available:
 
 # Setup
 
+You will need to have the environment variable `RSC_LICENSE` set to the license key for Connect.
+
 ```
 # Install docker-compose if needed
 if [ ! `which docker-compose` ]; then 
