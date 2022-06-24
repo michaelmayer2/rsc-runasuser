@@ -22,6 +22,11 @@ if [ ! `which docker-compose` ]; then
 	systemctl start docker 
 fi
 
+# Modify sssd.conf to point to the correct LDAP server
+
+ipaddr=`hostname`
+sed -i "s#IPADDR#$ipaddr#" etc/sssd/sssd.conf
+
 # Clean out any leftover from other installs
 rm -rf /efs/rsc
 rm -rf /scratch/rsc
